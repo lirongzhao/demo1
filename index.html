@@ -1,0 +1,59 @@
+		<!-- 面包屑（即“留言板->登录”之类的内容）-->
+		<div class="navbar clearfix"> 
+			<div class="breadcrumb"> 
+				<ul> 
+					<li class="first"><a href="index.php">简单留言板</a></li>
+					<li> <span class="arrow sep">&#x25BA;</span> 首页 </li>
+				</ul>
+			</div> 			
+		</div> 
+
+		<!-- 显示留言板主题 -->
+		<!-- START OF CONTENT --> 
+		<div id="content">
+			<div id="intro" class="generalbox box">
+				<font size="+0" face="courier new">
+					欢迎大家来到我的留言板。<br />
+					您有什么问题或想法，请书写下您的笔墨。<br />					
+					如果您有其他的想法......<br />
+					您可以在这里和大家一起交流和探讨。<br />
+					如果您还没有用户名，请<a href="register.php">注册</a>一个用户名，体验更多精彩。<br />
+				</font>
+			</div>
+		
+			<div class="singlebutton forumaddnew">
+				 <input type="submit" onclick="window.location.href='addMsg.php';" value="添加一个新讨论话题" />
+			</div>
+
+			<br />
+
+			<table cellspacing="0" class="forumheaderlist">
+					
+				<!-- 表头信息 -->
+				<tr>
+					<th class="header topic" scope="col">留言</th>
+					<th class="header author" colspan="1">留言人</th>
+					<th class="header replies" scope="col">发表时间</th>
+					<th class="header lastpost" scope="col">操作</th>
+				</tr>	
+				
+			</table>
+
+			<!-- 显示分页码（开始） -->
+			<div class="paging">
+				<a href="index.php?page=1">首页</a>&nbsp; &nbsp;
+				<a href="index.php?page=">末页</a>&nbsp;
+				当前第 1 页&nbsp;
+				转到 &nbsp;<input style="width: 20px;" type="text" id="pageNum" name="pageNum" />&nbsp; 页
+				（共 3 页）
+				<a href="#" onclick="window.location.href='index.php?page=' + document.getElementById('pageNum').value; return false;"> GO </a>
+			</div>
+			<!-- 显示分页码（结束） -->
+
+		</div> 
+		<!-- END OF CONTENT -->
+<?php
+session_start();
+include 'header.inc.php';
+include 'footer.inc.php';
+?> 
